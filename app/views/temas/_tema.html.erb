@@ -1,0 +1,14 @@
+<tr id=<%= "tema_#{tema.id}" %>>
+
+  <td><%= tema.nombre %></td>
+  <td><%= tema.unidad.programa.nombre %></td>
+  <td><%= tema.unidad.nombre %></td>
+  <td><%= tema.descripcion %></td>
+  <td>
+    <%= link_to 'Mostrar', tema, :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_tema_path(tema), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', tema, :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+    </td>
+</tr>

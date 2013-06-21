@@ -1,0 +1,13 @@
+<tr id=<%= "unidad_#{unidad.id}" %>>
+  <td><%= unidad.nombre %></td>
+  <td><%= unidad.programa.nombre %></td>
+  <td>
+    <%= link_to 'Mostrar', unidad, :remote => true, :class => 'btn btn-mini' %>
+
+    <%= link_to 'Editar', edit_unidad_path(unidad), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', unidad, :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+    </td>
+
+</tr>

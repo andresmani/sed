@@ -1,0 +1,15 @@
+<tr id=<%= "actividad_#{actividad.id}" %>>
+
+  <td><%= actividad.nombre %></td>
+  <td><%= actividad.tema.unidad.programa.nombre %></td>
+  <td><%= actividad.tema.unidad.nombre %></td>
+  <td><%= actividad.tema.nombre %></td>
+  <td><%= actividad.descripcion %></td>
+  <td>
+    <%= link_to 'Mostrar', actividad, :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_actividad_path(actividad), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', actividad, :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+    </td>
+</tr>

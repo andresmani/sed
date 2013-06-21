@@ -1,0 +1,12 @@
+<%= simple_form_for(@evaluacion, :html => { :class => 'form-horizontal' }, :remote => true ) do |f| %>
+
+	<%= f.error_notification %>
+
+  <%= f.input :datevalu, :label => "Datos a evaluar" %>
+  <%= f.input :calificacion %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                evaluaciones_path, :class => 'btn' %>
+  </div>
+<% end %>

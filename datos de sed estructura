@@ -1,0 +1,93 @@
+datos de sed estructura 
+
+sed
+ 
+
+	-Programa (curso)
+	 {
+		-unidades}
+		{
+			-temas}
+			{
+				-actividades}
+				
+					-evaluaciones
+					{
+						-calificacion}
+
+ programa:
+		-nombre
+		-codigo
+		+unidades
+
+ unidades:
+		-nombre
+		+temas
+
+ temas:
+		-nombre
+		-descripcion
+		+actividades
+		+evaluaciones*tma
+		+calificacion*tma
+
+		actividades:
+		-nombre	
+		-descripcion
+
+		:evaluaciones*tema
+		-tema
+		-datos a evaluar 
+		-calificacion
+
+
+--------------------------------------------------------------------
+comandos:
+ {
+		agregar gemas bundle y 
+		1)rails g simple_form:install --bootstrap
+		2)rails g bootstrap:install
+
+		repetir en cada scaffold 
+		3)rails g scaffold nombre campo:tipo --skip-stylesheets
+		4)rake db:miggrate
+		5)rails g bootstrap:themed scaffold(s)<- scaffold en plural -f
+ }
+		modelos:
+			programa:
+			rails g scaffold programa nombre:string ficha:string --skip-stylesheets 
+			-migrar
+			rails g bootstrap:themed programas -f
+			--------------------------------------------------------------------------
+
+			unidades:
+			rails g scaffold unidad nombre:string programa:references --skip-stylesheets
+			-migrar
+			rails g bootstrap:themed unidades -f
+			---------------------------------------------------------
+
+			temas:
+				rails g scaffold tema nombre:string descripcion:text unidad:references --skip-stylesheets
+				-migrar
+				rails g bootstrap:themed temas -f 
+				-------------------------------------------------------
+
+				actividades:
+				rails g scaffold actividad nombre:string descripcion:text tema:references --skip-stylesheets
+				-migrar
+				rails g bootstrap:themed actividades -f
+				-----------------------------------------------------------------------------
+
+				evaluaciones:
+				*tema-> lista desplegable
+				datevalu -> datos a evaluar
+				rails g scaffold evaluacion datevalu:text calificacion:float tema:references --skip-stylesheets
+				-migrar
+				rails g bootstrap:themed evaluaciones -f
+
+
+
+
+
+
+
