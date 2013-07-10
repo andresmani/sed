@@ -1,7 +1,16 @@
 class ActividadesController < ApplicationController
 
+  before_filter :find_tema_actividades
+
   def index
-    @actividades = Actividad.all
+    @nrp = (params[:registro] != nil)? params[:registro].to_i : 3
+
+   if ((@nrp) <= 0)
+     @nrp = 3
+   end 
+
+    @actividades = @tema.actividades.search(params[:search]).paginate(:per_page=>(@nrp), :page=>params[:page])      
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -18,8 +27,9 @@ class ActividadesController < ApplicationController
   end
 
   def create
-    @actividad = Actividad.new(params[:actividad])
-    render :action => :new unless @actividad.save    
+    @actividad = @tema.actividades.build(params[:actividad])
+    render :action => :new unless @actividad.save 
+    @actividades = Actividad.all   
   end
 
    def edit
@@ -34,5 +44,12 @@ class ActividadesController < ApplicationController
   def destroy
     @actividad = Actividad.find(params[:id])
     @actividad.destroy
+    @actividades = Actividad.all
+  end
+
+  private
+  def find_tema_actividades
+    @tema = Tema.find(params[:tema_id])  
+    @actividad = Actividad.find(params[:id]) if params[:id]  
   end
 end

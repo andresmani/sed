@@ -1,0 +1,17 @@
+<%- model_class = Estudiante -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='estudiante'>
+  <p><b>Nombre: </b><%= @estudiante.nombre %></p>
+  <p><b>Apellido: </b><%= @estudiante.apellido %></p>
+  <p><b>Tipo Documento: </b><%= @estudiante.tpodocumento.nombre %></p>
+  <p><b>Documento: </b><%= @estudiante.documento %></p>
+  <p><b>Email: </b><%= @estudiante.email %></p>
+  <p><b>Tellefono Casa: </b><%= @estudiante.tel %></p>
+  <p><b>Celular: </b><%= @estudiante.cel %></p>
+  <p><b>Fecha Nacimiento: </b><%= @estudiante.fechana %></p>
+  <p><b>programa: </b><%= @estudiante.grupo.programa.nombre %></p>
+</div>
+<p><b>ficha: </b><%= @estudiante.grupo.ficha %></p>

@@ -5,10 +5,11 @@
   <td><%= tema.unidad.nombre %></td>
   <td><%= tema.descripcion %></td>
   <td>
-    <%= link_to 'Mostrar', tema, :remote => true, :class => 'btn btn-mini' %>
-    <%= link_to 'Editar', edit_tema_path(tema), :remote => true,
+    <%= link_to 'Mostrar', unidad_tema_path(@unidad, tema), :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_unidad_tema_path(@unidad, tema), :remote => true,
         :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', tema, :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+    <%= link_to 'Eliminar', unidad_tema_path(@unidad, tema), :data => { :confirm => 'Esta Seguro?' },:method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+    </td>
+    <td><%= link_to "Actividades", tema_actividades_path(tema),  :class=>"btn btn-inverse" %>
     </td>
 </tr>

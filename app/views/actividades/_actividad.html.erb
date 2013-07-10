@@ -6,10 +6,10 @@
   <td><%= actividad.tema.nombre %></td>
   <td><%= actividad.descripcion %></td>
   <td>
-    <%= link_to 'Mostrar', actividad, :remote => true, :class => 'btn btn-mini' %>
-    <%= link_to 'Editar', edit_actividad_path(actividad), :remote => true,
+    <%= link_to 'Mostrar', tema_actividad_path(@tema, actividad), :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_tema_actividad_path(@tema, actividad), :remote => true,
         :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', actividad, :data => { :confirm => 'Esta Seguro?' },
+    <%= link_to 'Eliminar', tema_actividad_path(@tema, actividad), :data => { :confirm => 'Esta Seguro?' },
         :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
     </td>
 </tr>

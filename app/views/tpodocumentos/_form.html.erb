@@ -1,0 +1,11 @@
+<%= simple_form_for(@tpodocumento, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+	<%= f.error_notification %>
+
+  <%= f.input :nombre, :label => 'Nombre:' %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                tpodocumentos_path, :class => 'btn' %>
+  </div>
+<% end %>

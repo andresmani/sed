@@ -59,6 +59,10 @@ comandos:
 			-migrar
 			rails g bootstrap:themed programas -f
 			--------------------------------------------------------------------------
+			rails g scaffold grupo ficha:string programa:references --skip-stylesheets
+			-migrar
+			rails g bootstrap:themed grupos -f
+			--------------------------------------------------------------------------
 
 			unidades:
 			rails g scaffold unidad nombre:string programa:references --skip-stylesheets
@@ -84,6 +88,16 @@ comandos:
 				rails g scaffold evaluacion datevalu:text calificacion:float tema:references --skip-stylesheets
 				-migrar
 				rails g bootstrap:themed evaluaciones -f
+				-------------------------------------------------------------------------------------------------
+
+				rails g scaffold tpodocumento nombre:string --skip-stylesheets
+				-migrar
+				rails g bootstrap:themed tpodocumentos -f
+				-----------------------------------------------------------------
+
+				rails g scaffold estudiante nombre:string apellido:string documento:string email:string tel:string cel:string fechana:date grupo:references tpodocumento:references --skip-stylesheets
+				-migrar
+				 rails g bootstrap:themed estudiantes -f
 
 
 

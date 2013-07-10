@@ -1,9 +1,14 @@
-<%= simple_form_for(@evaluacion, :html => { :class => 'form-horizontal' }, :remote => true ) do |f| %>
+<%= simple_form_for(@evaluacion, :html => { :class => 'form-horizontal', :multipart => true	}, :remote => true ) do |f| %>
 
 	<%= f.error_notification %>
 
-  <%= f.input :datevalu, :label => "Datos a evaluar" %>
+  <%= f.label :Archivo %>
+  <%= f.file_field :archivo %><br><br>
+
+  <%= f.label :evaluacion %>
+  <%= f.text_area( :datevalu, :rows => 5) %><br><br>
   <%= f.input :calificacion %>
+
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

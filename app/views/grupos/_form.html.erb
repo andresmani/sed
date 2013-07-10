@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag "application" %>
+<%= simple_form_for([@programa, @grupo], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+
+    <%= f.error_notification %>
+
+    <%= f.input :ficha, :label =>'Ficha:' %>
+    <div class="form-actions">
+      <%= f.button :submit, :class => 'btn-primary' %>
+      <%= link_to t('.cancelar', :default => t("helpers.links.cancel")), programa_grupos_path, :class => 'btn' %>
+      
+    </div>
+<% end %>

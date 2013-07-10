@@ -1,0 +1,12 @@
+<tr id=<%= "evaluacion_#{evaluacion.id}" %>>
+  <td><%= image_tag evaluacion.archivo.url(:lsmall) %></td>
+  <td><%= evaluacion.datevalu %></td>
+  <td><%= evaluacion.calificacion %></td>
+  <td>
+    <%= link_to 'Mostrar', evaluacion, :remote => true, :class => 'btn btn-mini' %>
+    <%= link_to 'Editar', edit_evaluacion_path(evaluacion), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', evaluacion, :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+    </td>
+</tr>

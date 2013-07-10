@@ -1,0 +1,11 @@
+<tr id=<%= "tpodocumento_#{tpodocumento.id}" %>>
+
+  <td><%= tpodocumento.nombre %></td>
+  <td>
+    <%= link_to 'Informacion', tpodocumento, :remote => true, :class => 'btn btn-mini btn-info' %>
+    <%= link_to 'Editar', edit_tpodocumento_path(tpodocumento), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', tpodocumento, :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr>

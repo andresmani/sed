@@ -1,0 +1,1 @@
+hacer iso en consola: dd if=/dev/cdrom of=camara.iso

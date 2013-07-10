@@ -1,0 +1,12 @@
+<tr id=<%= "grupo_#{grupo.id}" %>>
+
+  <td><%= grupo.programa.nombre %></td>
+  <td><%= grupo.ficha %></td>
+  <td>
+    <%= link_to 'Informacion', programa_grupo_path(@programa, grupo), :remote => true, :class => 'btn btn-mini btn-info' %>
+    <%= link_to 'Editar', edit_programa_grupo_path(@programa, grupo), :remote => true,
+        :class => 'btn btn-mini' %>
+    <%= link_to 'Eliminar', programa_grupo_path(@programa, grupo), :data => { :confirm => 'Esta Seguro?' },
+        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  </td>
+</tr> 

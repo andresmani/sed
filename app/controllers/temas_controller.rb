@@ -1,7 +1,16 @@
 class TemasController < ApplicationController
 
+  before_filter :find_unidad_temas
+
   def index
-    @temas = Tema.all
+    @nrp = (params[:registro] != nil)? params[:registro].to_i : 3
+
+   if ((@nrp) <= 0)
+     @nrp = 3
+   end 
+
+    @temas = @unidad.temas.search(params[:search]).paginate(:per_page=>(@nrp), :page=>params[:page])      
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -22,8 +31,9 @@ class TemasController < ApplicationController
   end
 
   def create
-    @tema = Tema.new(params[:tema])
+    @tema = @unidad.temas.build(params[:tema])
     render :action => :new unless @tema.save
+    @temas = Tema.all
   end
 
   def update
@@ -35,6 +45,14 @@ class TemasController < ApplicationController
   def destroy
     @tema = Tema.find(params[:id])
     @tema.destroy
+    @temas = Tema.all
+  end
+
+  private
+
+  def find_unidad_temas
+    @unidad = Unidad.find(params[:unidad_id])
+    @tema = Tema.find(params[:id]) if params[:id]
   end
 
 end

@@ -12,16 +12,18 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.remotipart
 //= require lazybox
 //= require twitter/bootstrap
 //= require_tree .
 
 $(document).ready(function() {
   
-  $('a#show_programa_link').lazybox({closeImg: true});
+  $('a#show_team_link').lazybox({closeImg: true});
   
   $('a[rel*=lazybox]').lazybox({close: false, modal: false, opacity: 0.7, klass: 'lazybox', speed: 200});
-  $.lazybox.settings = {cancelClass: "button green", submitClass: 'button red', closeImg: false, niceClose: false}
+  $.lazybox.settings = {cancelClass: "btn btn-warning btn-mini", submitClass: 'btn btn-danger btn-mini', closeImg: false, niceClose: false}
   $.rails.allowAction = $.lazybox.confirm;
+ 
  
 });

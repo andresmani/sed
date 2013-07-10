@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130616012309) do
+ActiveRecord::Schema.define(:version => 20130703013439) do
 
   create_table "actividades", :force => true do |t|
     t.string   "nombre"
@@ -23,16 +23,45 @@ ActiveRecord::Schema.define(:version => 20130616012309) do
 
   add_index "actividades", ["tema_id"], :name => "index_actividades_on_tema_id"
 
+  create_table "estudiantes", :force => true do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "documento"
+    t.string   "email"
+    t.string   "tel"
+    t.string   "cel"
+    t.date     "fechana"
+    t.integer  "grupo_id"
+    t.integer  "tpodocumento_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "estudiantes", ["grupo_id"], :name => "index_estudiantes_on_grupo_id"
+  add_index "estudiantes", ["tpodocumento_id"], :name => "index_estudiantes_on_tpodocumento_id"
+
   create_table "evaluaciones", :force => true do |t|
     t.text     "datevalu"
     t.float    "calificacion"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "archivo_file_name"
+    t.string   "archivo_content_type"
+    t.integer  "archivo_file_size"
+    t.datetime "archivo_updated_at"
   end
+
+  create_table "grupos", :force => true do |t|
+    t.string   "ficha"
+    t.integer  "programa_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "grupos", ["programa_id"], :name => "index_grupos_on_programa_id"
 
   create_table "programas", :force => true do |t|
     t.string   "nombre"
-    t.string   "ficha"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -46,6 +75,12 @@ ActiveRecord::Schema.define(:version => 20130616012309) do
   end
 
   add_index "temas", ["unidad_id"], :name => "index_temas_on_unidad_id"
+
+  create_table "tpodocumentos", :force => true do |t|
+    t.string   "nombre"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "unidades", :force => true do |t|
     t.string   "nombre"

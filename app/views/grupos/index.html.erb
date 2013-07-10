@@ -1,0 +1,44 @@
+<%- model_class = Grupo -%>
+<div class="page-header">
+  <center><h1>Grupos del Programa <%= @programa.nombre %></h1></center>
+
+  <%= form_tag request.path, :method => 'get' do %>
+    Datos a Buscar:
+    <div class="input-append">
+      <%= search_field_tag :search, params[:search], :placeholder => "nombre, Documento, email" %>
+      <%= submit_tag "Consultar", :class => "btn btn-inverse ", :name => nil %>
+    </div>
+    <p>numero de registros
+   <p><%= text_field_tag :registro, params[:registro], options={:class=>"span1"} %></p>
+    <% end %>
+    <br>
+</div>
+<table class="table table-striped table-bordered table-condensed">
+  <thead>
+    <tr>
+      <th>Programa</th>
+      <th>Ficha</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+     <%= render @grupos %>
+  </tbody>
+  <tfoot>
+  </tfoot>
+</table>
+    <tr>
+      <td><%= link_to 'Nueva Ficha', new_programa_grupo_path,:class =>" btn btn-info", :remote => true %></td>
+
+      <td><%= link_to 'Atras', programas_path,:class =>" btn btn-info" %></td>
+    </tr>
+
+
+    <div class="pagination pagination-centered">
+    <ul>
+    <%= will_paginate @grupos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+    &raquo;' %>
+  </ul>
+  <br>
+    <td>Total Grupos: <%= @grupos.total_entries %> </td>
+  </div>

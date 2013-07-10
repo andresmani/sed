@@ -1,0 +1,3 @@
+$('table tbody').append("<%= escape_javascript(render @grupo) %>")
+$.lazybox.close()
+$("input#totalregs").attr('value','<%= @grupos.count %>');

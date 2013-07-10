@@ -1,2 +1,3 @@
 $('table tbody').append("<%= escape_javascript(render @unidad) %>")
 $.lazybox.close()
+$("input#totalregs").attr('value','<%= @unidades.count %>');

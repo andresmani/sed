@@ -1,16 +1,14 @@
-<%= simple_form_for(@tema, :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
+<%= simple_form_for([@unidad, @tema], :html => { :class => 'form-horizontal' }, :remote => true) do |f| %>
 
 	<%= f.error_notification %>
 
   	<%= f.input :nombre, :label => "Nombre" %>
-  	<%= f.label :unidad %>
-  	<%= f.collection_select :unidad_id, Unidad.all, :id, :nombre %> <br><br>
   	<%= f.label :descripcion %>
   	<%= f.text_area(:descripcion, :rows => 5) %>
 
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                temas_path, :class => 'btn' %>
+                unidad_temas_path, :class => 'btn' %>
   </div>
 <% end %>

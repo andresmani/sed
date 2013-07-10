@@ -1,13 +1,25 @@
 Sed::Application.routes.draw do
+  
+    resources :programas do 
+        resources :grupos
+    end
 
-  resources :actividades
+    resources :unidades do
+        resources :temas
+    end
 
-
-        resources :programas do 
-        resources :unidades 
+    resources :temas do 
+        resources :actividades
     end
     
     get "home/index"
+    resources :estudiantes
+
+    resources :tpodocumentos
+
+    resources :grupos
+
+    resources :actividades
 
     resources :evaluaciones
 

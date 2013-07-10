@@ -1,0 +1,12 @@
+<%- model_class = Evaluacion -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<div class='evaluacion'>
+
+	<dt><strong><%= document_tag @evaluacion.archivo.url %></strong></dt>
+ 
+  <p><b>nombres: </b><%= @evaluacion.evaluacion %></p>
+  <p><b>Calificacion: </b><%= @evaluacion.calificacion %></p>
+</div>
