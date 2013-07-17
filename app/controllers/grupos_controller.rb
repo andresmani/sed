@@ -24,6 +24,7 @@ class GruposController < ApplicationController
 
   def create
     @grupo = @programa.grupos.build(params[:grupo])
+    #@grupo.programa_id = @programa.id
     render :action => :new unless @grupo.save
     @grupos = Grupo.all  
   end

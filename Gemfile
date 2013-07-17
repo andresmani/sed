@@ -4,7 +4,6 @@ source 'https://rubygems.org'
 
 	gem 'pg'
 
-group :assets do
 	gem 'sass-rails', '~> 3.2.3'
 	gem 'coffee-rails', '~> 3.2.1'
 
@@ -13,11 +12,11 @@ group :assets do
 	gem 'json'
 	gem 'less-rails' 
 	gem 'twitter-bootstrap-rails'
+	gem 'bootstrap-datepicker-rails'
 	gem 'uglifier', '>= 1.0.3'
 	gem 'will_paginate'
 	gem 'bootstrap-will_paginate'
-end
-
+	gem 'bootstrap-datepicker-rails'
 	gem 'jquery-rails'
 	gem 'simple_form'
 	gem 'lazybox'
@@ -28,6 +27,10 @@ end
 	gem 'bcrypt-ruby', :require => 'bcrypt'
 	gem 'cancan'
 	gem 'rolify'
+
+group :test do
+	
 	gem 'autotest-rails'
 	gem 'ZenTest'
 
+end

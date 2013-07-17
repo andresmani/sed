@@ -12,6 +12,7 @@ Sed::Application.routes.draw do
         resources :actividades
     end
     
+    match "/update_grupos" => "estudiantes#update_grupos"
     get "home/index"
     resources :estudiantes
 

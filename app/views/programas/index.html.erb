@@ -5,7 +5,7 @@
   <%= form_tag request.path, :method => 'get' do %>
     Datos a Buscar:
     <div class="input-append">
-      <%= search_field_tag :search, params[:search], :placeholder => "nombre, Documento, email" %>
+      <%= search_field_tag :search, params[:search], :placeholder => "nombre" %>
       <%= submit_tag "Consultar", :class => "btn btn-inverse ", :name => nil %>
     </div>
     <p>numero de registros

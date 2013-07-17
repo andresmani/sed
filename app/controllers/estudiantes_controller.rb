@@ -19,12 +19,21 @@ class EstudiantesController < ApplicationController
   end
 
   def new
+    @programas = Programa.all  
+    @grupos = Grupo.all
     @estudiante = Estudiante.new
   end
 
   def edit
+    @programas = Programa.all  
+    @grupos = Grupo.all
     @estudiante = Estudiante.find(params[:id])
   end
+
+  def update_grupos
+   @grupos = Grupo.where('programa_id = ?', params[:programa_id])
+   render :partial => "grupos", :object => @grupos
+ end
 
   def create
     @estudiante = Estudiante.new(params[:estudiante])

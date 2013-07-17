@@ -10,10 +10,12 @@ class CreateEstudiantes < ActiveRecord::Migration
       t.date :fechana
       t.references :grupo
       t.references :tpodocumento
+      t.references :programa
 
       t.timestamps
     end
     add_index :estudiantes, :grupo_id
     add_index :estudiantes, :tpodocumento_id
+    add_index :estudiantes, :programa_id
   end
 end
