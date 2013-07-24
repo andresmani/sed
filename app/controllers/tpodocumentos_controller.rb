@@ -1,5 +1,5 @@
 class TpodocumentosController < ApplicationController
-  
+  before_filter :require_login
   def index
     @tpodocumentos = Tpodocumento.all
 

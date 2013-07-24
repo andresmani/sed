@@ -1,5 +1,5 @@
 class ProgramasController < ApplicationController
-  
+  before_filter :require_login
   before_filter :find_programa
 
   def index

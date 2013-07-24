@@ -1,5 +1,5 @@
 class EstudiantesController < ApplicationController
-  
+  before_filter :require_login
   def index
     @nrp = (params[:registro] != nil)? params[:registro].to_i : 3
 

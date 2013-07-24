@@ -54,7 +54,35 @@
   border: none;
   box-shadow: none;
 }
+/*= ESTILOS PERSONALIZADOS*/
 
-#mo{
-  margin-right: 30%;
+/*estilo del inicio de sesion*/
+/*inicio*/
+  #login1 {
+
+      width: 430px;
+      padding: 8px;
+      border: 2px solid red;
+       
+      /*** Adding in CSS3 ***/
+   
+      /* *Esquinas redondeadas* */
+      -moz-border-radius: 20px;
+      -webkit-border-radius: 20px;
+   
+      /* ==color de fondo del recuadro contenesdor de los campos de inicio de sesion */
+      /* *configuracion para mozila* */
+      background:  -moz-linear-gradient(19% 75% 90deg,#424242, #A4A4A4);
+      /* *configuracion para chrome* */
+      background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#424242), to(#A4A4A4));
+   
+      /*** == ***/
+      -moz-box-shadow:0px -5px 300px #000000;
+      -webkit-box-shadow:0px -5px 300px #000000;
+  }
+  
+  .body1 {
+  background-color: #6E6E6E;
+ 
 }
+/*fin*/

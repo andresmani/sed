@@ -1,5 +1,5 @@
 class UnidadesController < ApplicationController
-
+  before_filter :require_login
   before_filter :find_unidad
   
   def index

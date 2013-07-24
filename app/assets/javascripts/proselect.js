@@ -1,3 +1,5 @@
+/* =funcion 
+_controla el la lista desplegable dependiente de la tabla de estudiantes_*/
 $(document).ready(function() {
  
  $("#gruposDiv").css('display','none');

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703013439) do
+ActiveRecord::Schema.define(:version => 20130722163417) do
 
   create_table "actividades", :force => true do |t|
     t.string   "nombre"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130703013439) do
     t.integer  "tpodocumento_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "programa_id"
   end
 
   add_index "estudiantes", ["grupo_id"], :name => "index_estudiantes_on_grupo_id"
@@ -90,5 +91,18 @@ ActiveRecord::Schema.define(:version => 20130703013439) do
   end
 
   add_index "unidades", ["programa_id"], :name => "index_unidades_on_programa_id"
+
+  create_table "users", :force => true do |t|
+    t.string   "username",                     :null => false
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.string   "remember_me_token"
+    t.datetime "remember_me_token_expires_at"
+  end
+
+  add_index "users", ["remember_me_token"], :name => "index_users_on_remember_me_token"
 
 end

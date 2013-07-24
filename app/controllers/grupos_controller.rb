@@ -1,5 +1,5 @@
 class GruposController < ApplicationController
- 
+ before_filter :require_login
   before_filter :find_programa_grupos
 
   def index
