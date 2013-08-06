@@ -16,7 +16,7 @@
  #lazybox div.team { max-width: 500px; }
 
 .lazybox {
-  background: transparent !important;
+  background: red !important;
 }
 
 #lazybox_close.img {
@@ -63,7 +63,7 @@
       width: 430px;
       padding: 8px;
       border: 2px solid red;
-       
+       color: #01DFD7;
       /*** Adding in CSS3 ***/
    
       /* *Esquinas redondeadas* */
@@ -76,9 +76,11 @@
       /* *configuracion para chrome* */
       background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#424242), to(#A4A4A4));
    
-      /*** == ***/
-      -moz-box-shadow:0px -5px 300px #000000;
-      -webkit-box-shadow:0px -5px 300px #000000;
+      /*** ==sombra ***/
+      /* *configuracion para mozila* */
+      -moz-box-shadow:0px -5px 30px #000000;
+      /* *configuracion para chrome* */
+      -webkit-box-shadow:0px -5px 30px #000000;
   }
   
   .body1 {

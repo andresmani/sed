@@ -11,12 +11,12 @@ Sed::Application.routes.draw do
     resources :temas do 
         resources :actividades
     end
+    get "home/index"
     get "logout" => "sessions#destroy", :as => "logout"
     get "login"  => "sessions#new", :as => "login"
     get "signup" => "users#new", :as => "signup"
     
     match "/update_grupos" => "estudiantes#update_grupos"
-    get "home/index"
 
     resources :users
 

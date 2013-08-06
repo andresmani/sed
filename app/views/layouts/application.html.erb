@@ -11,8 +11,8 @@
     <%= yield(:head) %>
     
   </head>
-              <% if current_user %>
   <body>
+      <% if current_user %>
     <div class ="tabbable navbar-inverse">
    <header class="navbar navbar-fixed-top">
       <nav class="navbar-inner ">
@@ -26,19 +26,12 @@
            <div class="nav-collapse">
                 <%= render 'layouts/navigation' %>
             </div>
-                <div class="btn-group offset3" >
-                  <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user icon-white"></i> Usuario: <%= current_user.username %></a>
-                  <ul class="dropdown-menu">
-                    <li><%= link_to(logout_path) do %>
-                      salir <i class="icon-briefcase"></i>
-                      <% end %>
-                    </li>
-                  </ul>
-                </div> 
-            <% end %>
            </div>
         </div>
       </nav>
+      <% else %>
+          <%= link_to "iniciar sesion", login_path, :class=>"btn btn-mini btn-primary" %>
+      <% end %>
     </div>
     </header>
     <div id="main" role="main">
@@ -49,7 +42,7 @@
               <%= render 'layouts/messages' %>
     <% flash.each do |name, msg| %>
       <%= content_tag :div, msg, :id => "flash_#{name}" %>
-    <% end %>
+      <% end %>
     <br><br><br>
               <%= yield %>
             </div>
