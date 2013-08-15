@@ -3,10 +3,25 @@
   <td><%= grupo.programa.nombre %></td>
   <td><%= grupo.ficha %></td>
   <td>
-    <%= link_to 'Informacion', programa_grupo_path(@programa, grupo), :remote => true, :class => 'btn btn-mini btn-info' %>
-    <%= link_to 'Editar', edit_programa_grupo_path(@programa, grupo), :remote => true,
-        :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', programa_grupo_path(@programa, grupo), :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+	    <div class="btn-group" >
+			<a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i><%= image_tag("config.png")%></i></a>
+		 <ul class="dropdown-menu">
+		      <li><%= link_to programa_grupo_path(@programa, grupo), :remote => true, :class => 'btn btn-mini btn-info'  do %>
+		       	 <i><%=image_tag("ver.png")%></i>
+		       		<% end %>
+		      </li>
+		      <li>
+			     <%= link_to edit_programa_grupo_path(@programa, grupo), :remote => true, :class => 'btn btn-mini'  do %>
+			     <i><%=image_tag("edit.png")%></i>
+			     <% end %>
+		      </li>
+		      <li>
+		         <%= link_to programa_grupo_path(@programa, grupo), :data => { :confirm => 'Esta Seguro?' }, :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger'  do %>
+		         <i><%=image_tag("del.png")%></i>
+		         <% end %>
+		      </li>
+		  </ul>
+		</div> 
   </td>
 </tr> 
+

@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= content_for?(:title) ? yield(:title) : "SED" %></title>
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="Andres Echeverri Arango" content="aprendizage">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>    
     <%= csrf_meta_tags %>
@@ -30,7 +30,10 @@
         </div>
       </nav>
       <% else %>
-          <%= link_to "iniciar sesion", login_path, :class=>"btn btn-mini btn-primary" %>
+        <div id="mod">
+        <p class="muted pull-right"><a  href="#myModal1"  role="button" class="pull-right btn-info btn-small " data-toggle="modal" title="Ver Informacion">Iniciar</a></p>
+      </div>      
+
       <% end %>
     </div>
     </header>

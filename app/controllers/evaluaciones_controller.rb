@@ -9,6 +9,11 @@ class EvaluacionesController < ApplicationController
     end
   end
 
+  def download
+    @evaluacion = Evaluacion.find(params[:id])
+    send_file(@evaluacion.archivo.path)
+  end
+
   def show
     @evaluacion = Evaluacion.find(params[:id])
   end

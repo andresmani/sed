@@ -1,6 +1,6 @@
 <%- model_class = Grupo -%>
 <div class="page-header">
-  <center><h1>Grupos del Programa <%= @programa.nombre %></h1></center>
+  <center><h1>Fichas del Programa <%= @programa.nombre %></h1></center>
 
   <%= form_tag request.path, :method => 'get' do %>
     Datos a Buscar:
@@ -28,9 +28,9 @@
   </tfoot>
 </table>
     <tr>
-      <td><%= link_to 'Nueva Ficha', new_programa_grupo_path,:class =>" btn btn-info", :remote => true %></td>
+      <td><%= link_to 'Nueva Ficha', new_programa_grupo_path,:class =>" btn btn-info btn-small", :remote => true %></td>
 
-      <td><%= link_to 'Atras', programas_path,:class =>" btn btn-info" %></td>
+      <td><%= link_to programas_path,:class =>" btn btn-info" do %> <i><%= image_tag('back.png') %></i> <%end %></td>
     </tr>
 
 

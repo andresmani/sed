@@ -10,3 +10,43 @@
 
 </html>
 
+<div id='ch'>
+ <div id="myModal1" class="modal hide fade " tabindex="5" role="dialog" aria-labelledby=" myModalLabel" aria-hidden="true">
+  <div  class="modal-header cm">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h5 id="myModalLabel">Iiniciar Sesion</h5>
+  </div>
+  <div class="modal-body ">
+    <body class="body1">
+      <center>
+        <div class="responsive">
+            <div id="login1" class="row" >
+              <%= form_tag sessions_path, :class => 'form-horizontal ' do |f| %>
+
+                  <div class="field control-group" >
+                      <label class="control-label" for="inputEmail"><b>Usuario:</b></label>
+                    <div class ="controls">
+                     <%= text_field_tag :username, params[:username] %>
+                     <span class="add-on"><i><%= image_tag('login.png') %></i></span>
+                    </div>
+                  </div>
+                  <div class="field control-group">
+                    <label class="control-label" for="inputEmail"><b>Clave:</b></label>
+                    <div class ="controls">
+                      <%= password_field_tag :password %>
+                      <span class="add-on"><i><%= image_tag('lock.png') %></i></span>
+                    </div>
+                  </div>
+
+                  <div class="control-group " ><%= submit_tag "Ingresar", :class => 'btn btn-info'  %></div>
+              <% end %>
+          </div>
+        </div>
+      </center>
+    </body>
+  </div>
+</div>  
+</div>
+
+ 
+

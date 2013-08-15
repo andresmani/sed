@@ -1,28 +1,27 @@
 <tr id=<%= "programa_#{programa.id}" %>>
-  
-  <td><%= programa.nombre %></td>
-   	
+
+  <th><%= programa.nombre %></th>
   
   <td>
     <div class="btn-group" >
-      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user icon-white"></i></a>
+      <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i><%= image_tag("config.png")%></i></a>
        <ul class="dropdown-menu">
-                    <li><%= link_to programa, :remote => true, :class => 'btn btn-mini'  do %>
-                      <b>Mostrar</b> <i class="icon-briefcase"></i>
+                    <li id='b'><%= link_to programa, :remote => true  do %>
+                      <i><%=image_tag("ver.png")%></i>
                       <% end %>
                     </li>
-                    <li>
-                      <%= link_to edit_programa_path(programa), :remote => true, :class => 'btn btn-mini'  do %>
-                      <b>Editar</b> <i class="icon-briefcase"></i>
+                    <li id="b">
+                      <%= link_to edit_programa_path(programa), :remote => true do %>
+                      <i><%=image_tag("edit.png")%></i>
                       <% end %>
                     </li>
-                    <li>
-                      <%= link_to programa, :data => { :confirm => 'Esta Seguro?' }, :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger'  do %>
-                      <b>Eliminar</b> <i class="icon-briefcase"></i>
+                    <li id="b">
+                      <%= link_to programa, :data => { :confirm => 'Esta Seguro?' }, :method => :delete, :remote => true do %>
+                      <i><%=image_tag("del.png")%></i>
                       <% end %>
                     </li>
                   </ul>
-      <td><%= link_to "fichas", programa_grupos_path(programa),  :class=>"btn btn-inverse" %>
-      </td>
     </div> 
+      <td><%= link_to "Fichas", programa_grupos_path(programa),  :class=>"btn btn-inverse" %>
+      </td>
 </tr>

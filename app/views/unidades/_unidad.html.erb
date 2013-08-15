@@ -2,15 +2,30 @@
   <td><%= unidad.nombre %></td>
   <td><%= unidad.programa.nombre %></td>
   <td>
-    <%= link_to 'Mostrar', unidad, :remote => true, :class => 'btn btn-mini' %>
-
-    <%= link_to 'Editar', edit_unidad_path(unidad), :remote => true,
-        :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', unidad, :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
+  <div class="btn-group" >
+        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i><%= image_tag("config.png")%></i></a>
+         <ul class="dropdown-menu">
+                      <li><%= link_to unidad, :remote => true, :class => 'btn btn-mini btn-info'  do %>
+                        <i><%=image_tag("ver.png")%></i>
+                        <% end %>
+                      </li>
+                      <li>
+                        <%= link_to edit_unidad_path(unidad), :remote => true, :class => 'btn btn-mini'  do %>
+                        <i><%=image_tag("edit.png")%></i>
+                        <% end %>
+                      </li>
+                      <li>
+                        <%= link_to unidad, :data => { :confirm => 'Esta Seguro?' }, :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger'  do %>
+                        <i><%=image_tag("del.png")%></i>
+                        <% end %>
+                      </li>
+                    </ul>
+      </div> 
+    
     </td>
 
     <td><%= link_to "Temas", unidad_temas_path(unidad),  :class=>"btn btn-inverse" %>
     </td>
+
 
 </tr>

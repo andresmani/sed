@@ -32,10 +32,9 @@
 
 <tfoot>
   <td>
-   <%= link_to "Nuevo actividad", new_tema_actividad_path, :remote =>true, :class =>'btn btn-success' %>
+   <%= link_to "Nuevo actividad", new_tema_actividad_path, :remote =>true, :class =>'btn btn-info btn-small' %>
  </td>
-
- <%= link_to "Atras", unidad_temas_path(@tema.unidad), :class =>'btn btn-success' %>
+ <td><%= link_to unidad_temas_path(@tema.unidad),:class =>" btn btn-info" do %> <i><%= image_tag('back.png') %></i> <%end %></td>
 </tfoot>
 
  <div class="pagination pagination-centered">

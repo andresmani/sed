@@ -7,6 +7,6 @@ class Evaluacion < ActiveRecord::Base
 
 	validates_attachment_presence :archivo
 	validates_attachment_size :archivo, :less_than => 5.megabytes
-	validates_attachment_content_type :archivo, :content_type => ['text/plain']
+	validates_attachment_content_type :archivo, :content_type => ['text/plain', 'application/pdf']
 
 end

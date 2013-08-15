@@ -1,12 +1,31 @@
 <tr id=<%= "evaluacion_#{evaluacion.id}" %>>
-  <td><%= image_tag evaluacion.archivo.url(:lsmall) %></td>
+  <td><%= link_to image_tag(evaluacion.archivo.url(:lsmall)), download_evaluacion_path(evaluacion) %></td>
   <td><%= evaluacion.datevalu %></td>
   <td><%= evaluacion.calificacion %></td>
   <td>
-    <%= link_to 'Mostrar', evaluacion, :remote => true, :class => 'btn btn-mini' %>
-    <%= link_to 'Editar', edit_evaluacion_path(evaluacion), :remote => true,
-        :class => 'btn btn-mini' %>
-    <%= link_to 'Eliminar', evaluacion, :data => { :confirm => 'Esta Seguro?' },
-        :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger' %>
-    </td>
+    <div class="btn-group" >
+        <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><i><%= image_tag("config.png")%></i></a>
+         <ul class="dropdown-menu">
+                      <li><%= link_to evaluacion, :remote => true, :class => 'btn btn-mini btn-info'  do %>
+                        <i><%=image_tag("ver.png")%></i>
+                        <% end %>
+                      </li>
+                      <li>
+                        <%= link_to edit_evaluacion_path(evaluacion), :remote => true, :class => 'btn btn-mini'  do %>
+                        <i><%=image_tag("edit.png")%></i>
+                        <% end %>
+                      </li>
+                      <li>
+                        <%= link_to evaluacion, :data => { :confirm => 'Esta Seguro?' }, :method => :delete, :remote => true, :class => 'btn btn-mini btn-danger'  do %>
+                        <i><%=image_tag("del.png")%></i>
+                        <% end %>
+                      </li>
+                       <li>
+                        <%= link_to download_evaluacion_path(evaluacion), :class => 'btn btn-mini btn-success'  do %>
+                        <i><%=image_tag("download.png")%></i>
+                        <% end %>
+                      </li>
+                    </ul>
+      </div> 
+  </td>
 </tr>

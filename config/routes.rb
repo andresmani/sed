@@ -11,6 +11,12 @@ Sed::Application.routes.draw do
     resources :temas do 
         resources :actividades
     end
+
+    resources :evaluaciones do 
+        member do 
+            get :download 
+        end
+    end     
     get "home/index"
     get "logout" => "sessions#destroy", :as => "logout"
     get "login"  => "sessions#new", :as => "login"
@@ -30,7 +36,7 @@ Sed::Application.routes.draw do
 
     resources :actividades
 
-    resources :evaluaciones
+    resources :evaluaciones 
 
     resources :actividades
 
