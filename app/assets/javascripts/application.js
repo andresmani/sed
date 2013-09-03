@@ -12,10 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require jquery.remotipart
-//= require lazybox
-//= require bootstrap-datepicker
 //= require twitter/bootstrap
+//= require bootstrap-datepicker
+//= require lazybox
+
+
 //= require_tree .
 
 $(document).ready(function() {

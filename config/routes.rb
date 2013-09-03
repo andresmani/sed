@@ -17,6 +17,7 @@ Sed::Application.routes.draw do
             get :download 
         end
     end     
+
     get "home/index"
     get "logout" => "sessions#destroy", :as => "logout"
     get "login"  => "sessions#new", :as => "login"

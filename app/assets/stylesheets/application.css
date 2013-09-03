@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require jquery.ui.all
  *= require lazybox
  *= require_tree .
  */
@@ -58,7 +59,7 @@
 
 /*estilo del inicio de sesion*/
 /*inicio*/
-  #login1 {
+  .login1 {
 
       width: 430px;
       padding: 8px;
@@ -101,14 +102,14 @@
 
 .cm{
   background-color: gray;
-  
+  color: white;
   -webkit-border-bottom-left-radius: 30px;
   -webkit-border-bottom-right-radius:30px;
   -webkit-border-top-left-radius:  30px;
   -webkit-border-top-right-radius:  30px;
-}
-#ch{
-  background-color: gray;
-  -webkit-border-top-left-radius:  100px;
-  -webkit-border-top-right-radius:  100px;
+
+  -moz-border-bottom-left-radius: 30px;
+  -moz-border-bottom-right-radius:30px;
+  -moz-border-top-left-radius:  30px;
+  -moz-border-top-right-radius:  30px;
 }

@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
      if user
              redirect_back_or_to root_path
      else
-   		alert = 'El Usuario o Contraseña son Invalidas' 
-   		                        
+   		redirect_to '#myModal1'
+      flash.alert = 'El Usuario o Contraseña son Invalidas' 
      end
  end
 
